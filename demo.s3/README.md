@@ -6,7 +6,7 @@ This is project will demonstrate how to build a S3 infra in aws.
 
  * `npm install`
  * `cdk bootstrap`
- * `cdk deploy --all --require-approval never`
+ * `cdk deploy --all`
 
 ## Open your browser then type
  * `Your ec2 DNS/phpinfo.php`
