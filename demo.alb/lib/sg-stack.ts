@@ -1,6 +1,7 @@
 import * as cdk from '@aws-cdk/core';
 import * as ec2 from '@aws-cdk/aws-ec2';
 import { VpcStack } from './vpc-stack';
+import { AlbStack } from './alb-stack';
 
 export class SgStack extends cdk.Stack {
 
@@ -33,7 +34,7 @@ export class SgStack extends cdk.Stack {
 
         //http
         sg.addIngressRule(
-            ec2.Peer.anyIpv4(),
+            ec2.Peer.ipv4(VpcStack.DemoVpc.vpcCidrBlock),
             ec2.Port.tcp(80),
             "allow public http."
         );
